@@ -36,34 +36,42 @@ title: Cloud Foundry CLI Reference Guide
 
 ## <a id='getting-started'></a> Getting Started
 <table>
-  <tr>
-    <th>Command</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>target</td>
-    <td>Set or view the targeted org or space</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>api</td>
-    <td>Set or view target api url</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>target</td>
+      <td>Set or view the targeted org or space</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>api</td>
+      <td>Set or view target api url</td>
+    </tr>
+  </tbody>
 </table>
 
 ## <a id='global-options'></a> Global Options
 <table>
-  <tr>
-    <th>Command</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>--version, -v</td>
-    <td>Print the version</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>--version, -v</td>
+      <td>Print the version</td>
+    </tr>
+  </tbody>
 </table>
       eos
     end

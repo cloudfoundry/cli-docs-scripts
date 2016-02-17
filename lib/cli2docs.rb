@@ -10,11 +10,15 @@ title: Cloud Foundry CLI Reference Guide
 
     TABLE_TEMPLATE= <<-EOS.chomp
 <table>
-  <tr>
-    <th>Command</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
 %s
+  </tbody>
 </table>
     EOS
     
@@ -60,10 +64,10 @@ title: Cloud Foundry CLI Reference Guide
       rows = body.inject('') do |rows, line|
         command, description = line.split(separator, 2)
         rows << <<-EOS
-  <tr>
-    <td>#{command}</td>
-    <td>#{description}</td>
-  </tr>
+    <tr>
+      <td>#{command}</td>
+      <td>#{description}</td>
+    </tr>
         EOS
       end
       TABLE_TEMPLATE % rows.chomp
