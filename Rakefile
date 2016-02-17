@@ -11,9 +11,9 @@ namespace :install do
   desc 'Install CF CLI on Linux'
   task :deb, [:version] do |t, args|
     version = args[:version]
-    url = "https://cli.run.pivotal.io/stable?release=debian64&version=${version}&source=github-rel"
+    url = "https://cli.run.pivotal.io/stable?release=debian64&version=#{version}&source=github-rel"
 
-    sh "wget -O cf_cli.deb '#{url}'"
+    sh "curl '#{url}' > cf_cli.deb"
     sh 'dpkg -i cf_cli.deb'
   end
 end
