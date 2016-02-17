@@ -33,7 +33,6 @@ title: Cloud Foundry CLI Reference Guide
         end
       end
 
-
       sections = sections.reject do |section|
         body = section[1]
         body.empty?
