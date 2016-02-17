@@ -2,11 +2,11 @@ desc 'Set up cli2docs requirements'
 task newb: :download
 
 desc 'Download CF CLI'
-task :download, [:version] do
+task :download, [:version] do |t, args|
   version = args[:version]
 
-  next if version.nil? && system('./cf > /dev/null')
-  next if version && `./cf --version`.include?(version)
+  next if version.nil? && File.exists?('cf')
+  next if version && File.exists?('cf') && system('./cf --version | grep version')
 
   os = case RbConfig::CONFIG['host_os']
          when /darwin/
