@@ -1,6 +1,12 @@
 desc 'Set up cli2docs requirements'
-task :newb do
-  next if system('./cf > /dev/null')
+task newb: :download
+
+desc 'Download CF CLI'
+task :download, [:version] do
+  version = args[:version]
+
+  next if version.nil? && system('./cf > /dev/null')
+  next if version && `./cf --version`.include?(version)
 
   os = case RbConfig::CONFIG['host_os']
          when /darwin/
@@ -9,11 +15,13 @@ task :newb do
            'linux64'
        end
 
-  sh "curl -L 'https://cli.run.pivotal.io/stable?release=#{os}-binary' | tar -zx"
+  url = "https://cli.run.pivotal.io/stable?release=#{os}-binary"
+  url << "&version=#{version}" if version
+  sh "curl -L '#{url}' | tar -zx"
 end
 
-desc 'Format `cf help` output to STDOUT'
-task format: :newb do
+desc 'Format `./cf help` output to STDOUT'
+task :format do
   require_relative 'lib/cli2docs'
-  puts Cli2Docs.format `cf help`
+  puts Cli2Docs.format `./cf help`
 end
