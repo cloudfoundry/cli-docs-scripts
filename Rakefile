@@ -13,7 +13,7 @@ namespace :install do
     version = args[:version]
     url = "https://cli.run.pivotal.io/stable?release=debian64&version=#{version}&source=github-rel"
 
-    sh "curl '#{url}' > cf_cli.deb"
+    sh "wget -O cf_cli.deb '#{url}'"
     sh 'dpkg -i cf_cli.deb'
   end
 end
