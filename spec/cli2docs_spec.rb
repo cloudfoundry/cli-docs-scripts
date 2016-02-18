@@ -48,8 +48,8 @@ title: Cloud Foundry CLI Reference Guide
       <td>Set or view the targeted org or space</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>api</td>

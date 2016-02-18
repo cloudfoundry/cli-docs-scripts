@@ -62,6 +62,8 @@ title: Cloud Foundry CLI Reference Guide
     def tablify_body(body, separator=/\s+/)
       rows = body.inject('') do |rows, line|
         command, description = line.split(separator, 2)
+        command ||= '&nbsp;'
+        description ||= '&nbsp;'
         rows << <<-EOS
     <tr>
       <td>#{command}</td>
