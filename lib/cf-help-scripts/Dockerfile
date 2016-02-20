@@ -1,15 +1,7 @@
 FROM phusion/baseimage:0.9.16
 
-# openjdk is deliberately old. It works with DITA-OT 1.7. Newer DITA-OT needs Oracle.
 RUN     apt-get update && apt-get install -y \
             build-essential \
-            curl \
-            git \
-            libfontconfig1 \
-            libjpeg8 \
-            libssl-dev \
-            libxrender1 \
-            openjdk-6-jdk \
             sed \
             wget
 
@@ -21,6 +13,7 @@ RUN     locale-gen en_US.UTF-8
 RUN     groupadd -r setupuser && useradd -r -g setupuser setupuser
 
 RUN     ssh-keyscan -H github.com >> /etc/ssh/ssh_known_hosts
+RUN     chown -R setupuser:setupuser /tmp
 
 USER    setupuser
 
@@ -30,4 +23,4 @@ WORKDIR /tmp/build
 
 ENV     LC_ALL en_US.UTF-8
 
-ADD     . /cf-cli
+ADD     . /tmp/build/
