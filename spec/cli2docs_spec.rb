@@ -47,13 +47,17 @@ title: Cloud Foundry CLI Reference Guide
     </tr>
   </thead>
   <tbody>
+    <tr class='separator'>
+      <td></td>
+      <td></td>
+    </tr>
     <tr>
       <td>target</td>
       <td>Set or view the targeted org or space</td>
     </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+    <tr class='separator'>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>api</td>
@@ -71,6 +75,10 @@ title: Cloud Foundry CLI Reference Guide
     </tr>
   </thead>
   <tbody>
+    <tr class='separator'>
+      <td></td>
+      <td></td>
+    </tr>
     <tr>
       <td>CF_COLOR=false</td>
       <td>Do not colorize output</td>
@@ -91,6 +99,10 @@ title: Cloud Foundry CLI Reference Guide
     </tr>
   </thead>
   <tbody>
+    <tr class='separator'>
+      <td></td>
+      <td></td>
+    </tr>
     <tr>
       <td>--version, -v</td>
       <td>Print the version</td>

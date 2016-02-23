@@ -17,11 +17,15 @@ title: Cloud Foundry CLI Reference Guide
     </tr>
   </thead>
   <tbody>
+    <tr class='separator'>
+      <td></td>
+      <td></td>
+    </tr>
 %s
   </tbody>
 </table>
     EOS
-    
+
     def format(cf_help)
       sections = []
 
@@ -66,15 +70,23 @@ title: Cloud Foundry CLI Reference Guide
       column_name = options.fetch(:column_name, 'Command')
 
       rows = body.inject('') do |rows, line|
-        command, description = line.split(separator, 2)
-        command ||= '&nbsp;'
-        description ||= '&nbsp;'
-        rows << <<-EOS
+        rows << if line.empty?
+                  <<-EOS
+    <tr class='separator'>
+      <td></td>
+      <td></td>
+    </tr>
+                  EOS
+                else
+                  command, description = line.split(separator, 2)
+                  description ||= '&nbsp;'
+                  <<-EOS
     <tr>
       <td>#{command}</td>
       <td>#{description}</td>
     </tr>
-        EOS
+                  EOS
+                end
       end
       TABLE_TEMPLATE % [column_name, rows.chomp]
     end
