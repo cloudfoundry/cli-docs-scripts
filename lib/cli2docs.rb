@@ -12,7 +12,7 @@ title: Cloud Foundry CLI Reference Guide
 <table>
   <thead>
     <tr>
-      <th>Command</th>
+      <th>%s</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -22,7 +22,7 @@ title: Cloud Foundry CLI Reference Guide
 </table>
     EOS
     
-    def format cf_help
+    def format(cf_help)
       sections = []
 
       cf_help.each_line do |line|
@@ -50,7 +50,9 @@ title: Cloud Foundry CLI Reference Guide
                       when /NAME|USAGE|VERSION/
                         "<p>#{body.join("\n")}</p>"
                       when "GLOBAL OPTIONS"
-                        self.tablify_body(body, /\s{2,}/)
+                        self.tablify_body(body, separator: /\s{2,}/, column_name: 'Option')
+                      when "ENVIRONMENT VARIABLES"
+                        self.tablify_body(body, column_name: 'Variable')
                       else
                         self.tablify_body(body)
                     end
@@ -59,7 +61,10 @@ title: Cloud Foundry CLI Reference Guide
       "#{TITLE_HEADER}\n#{out.join("\n\n")}"
     end
 
-    def tablify_body(body, separator=/\s+/)
+    def tablify_body(body, **options)
+      separator = options.fetch(:separator, /\s+/)
+      column_name = options.fetch(:column_name, 'Command')
+
       rows = body.inject('') do |rows, line|
         command, description = line.split(separator, 2)
         command ||= '&nbsp;'
@@ -71,7 +76,7 @@ title: Cloud Foundry CLI Reference Guide
     </tr>
         EOS
       end
-      TABLE_TEMPLATE % rows.chomp
+      TABLE_TEMPLATE % [column_name, rows.chomp]
     end
   end
 end

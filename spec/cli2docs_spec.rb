@@ -17,6 +17,10 @@ GETTING STARTED:
 
 INSTALLED PLUGIN COMMANDS:
 
+ENVIRONMENT VARIABLES:
+   CF_COLOR=false                     Do not colorize output
+   CF_HOME=path/to/dir/               Override path to default config directory
+
 GLOBAL OPTIONS:
    --version, -v                      Print the version
       eos
@@ -58,11 +62,31 @@ title: Cloud Foundry CLI Reference Guide
   </tbody>
 </table>
 
+## <a id='environment-variables'></a> Environment Variables
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CF_COLOR=false</td>
+      <td>Do not colorize output</td>
+    </tr>
+    <tr>
+      <td>CF_HOME=path/to/dir/</td>
+      <td>Override path to default config directory</td>
+    </tr>
+  </tbody>
+</table>
+
 ## <a id='global-options'></a> Global Options
 <table>
   <thead>
     <tr>
-      <th>Command</th>
+      <th>Option</th>
       <th>Description</th>
     </tr>
   </thead>
