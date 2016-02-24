@@ -1,7 +1,7 @@
 #curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 curl -L "https://cli.run.pivotal.io/edge?arch=linux64&source=github" | tar -zx
 
-export PATH=$PATH:.
+export PATH=.:$PATH
 
 cf -v > cf-version.txt
 cf h | sed -n '/GETTING/,/ENVIRONMENT VARIABLES:/{/GETTING/b;/ENVIRONMENT VARIABLES:/b;p}' | sed -r '/.*:$/d;/^^$/d;s/   ([a-z-]+).*$/\1/' > cf-cmd-list.txt

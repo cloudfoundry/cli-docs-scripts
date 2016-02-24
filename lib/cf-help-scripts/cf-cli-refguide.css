@@ -1,0 +1,99 @@
+body {
+    background: #fff none repeat scroll 0 0;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: auto;
+    font-family: "Noto Serif","DejaVu Serif",serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin: 10px 130px 10px 130px;
+    padding: 0;
+    position: relative;
+}
+
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+
+#lang-selector ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+#lang-selector ul li { display: inline; }
+#lang-selector ul li a { text-decoration: none; }
+#lang-selector ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+  background-color: #036;
+}
+
+#lang-selector ul li a:hover {
+  color: #fff;
+  background-color: #369;
+}
+
+.option-name{white-space:nowrap;font-family:monospace;font-weight:bold}
+.term{white-space:nowrap;font-family:monospace;font-weight:bold}
+.alias-item{white-space:nowrap;font-family:monospace;font-weight:bold}
+code {font-family:monospace;white-space:normal;background-color:#eee;width:auto;display:block;line-height: 15.56px; padding: 5px 20px 5px 20px; margin: 15px 0 15px 0;}
+
+pre{background-color:#eee;padding:5px;width:auto}
+dl {
+    font-size: 1em;
+    line-height: 1.6;
+    list-style-position: outside;
+}
+
+
+#nav ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#nav ul li:hover {
+  background: #555;
+  color: #fff;
+}
+#nav ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+#nav ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+#nav ul li ul li:hover { background: #666; }
+#nav ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
