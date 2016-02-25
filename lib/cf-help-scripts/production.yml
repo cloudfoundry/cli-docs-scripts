@@ -1,0 +1,5 @@
+---
+applications:
+- name: cf-cli-prod
+  buildpack: staticfile_buildpack
+  path: public

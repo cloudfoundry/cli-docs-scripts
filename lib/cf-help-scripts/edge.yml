@@ -1,5 +1,5 @@
 ---
 applications:
-- name: cf-cli
+- name: cf-cli-edge
   buildpack: staticfile_buildpack
   path: public

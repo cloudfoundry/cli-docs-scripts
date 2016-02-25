@@ -1,0 +1,5 @@
+---
+applications:
+- name: cf-cli-staging
+  buildpack: staticfile_buildpack
+  path: public
