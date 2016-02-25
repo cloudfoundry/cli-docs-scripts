@@ -1,5 +1,10 @@
-#curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
-curl -L "https://cli.run.pivotal.io/edge?arch=linux64&source=github" | tar -zx
+if [ -z "${EDGE}" ]; then
+  URL="https://cli.run.pivotal.io/stable?release=linux64-binary&source=github"
+else
+  URL="https://cli.run.pivotal.io/edge?arch=linux64&source=github"
+fi
+
+curl -L "$URL" | tar -zx
 
 export PATH=.:$PATH
 
