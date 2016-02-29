@@ -14,16 +14,16 @@
 <div id="lang-selector">
 <ul>
  <li id="home-link"><a href="../../LOCALE/cf/index.html">Up</a></li>
- <li><a href="../../en_US/cf/index.html">English</a></li>
- <li><a href="../../zh_Hans/cf/index.html">Chinese (Simplified)</a></li>
- <li><a href="../../zh_Hant/cf/index.html">Chinese (Traditional)</a></li>
- <li><a href="../../fr_FR/cf/index.html">French</a></li>
- <li><a href="../../de_DE/cf/index.html">German</a></li>
- <li><a href="../../it_IT/cf/index.html">Italian</a></li>
- <li><a href="../../ja_JP/cf/index.html">Japanese</a></li>
- <li><a href="../../ko_KR/cf/index.html">Korean</a></li>
- <li><a href="../../pt_BR/cf/index.html">Portugese</a></li>
- <li><a href="../../es_ES/cf/index.html">Spanish</a></li>
+ <li><a href="../../en-US/cf/index.html">English</a></li>
+ <li><a href="../../zh-Hans/cf/index.html">Chinese (Simplified)</a></li>
+ <li><a href="../../zh-Hant/cf/index.html">Chinese (Traditional)</a></li>
+ <li><a href="../../fr-FR/cf/index.html">French</a></li>
+ <li><a href="../../de-DE/cf/index.html">German</a></li>
+ <li><a href="../../it-IT/cf/index.html">Italian</a></li>
+ <li><a href="../../ja-JP/cf/index.html">Japanese</a></li>
+ <li><a href="../../ko-KR/cf/index.html">Korean</a></li>
+ <li><a href="../../pt-BR/cf/index.html">Portugese</a></li>
+ <li><a href="../../es-ES/cf/index.html">Spanish</a></li>
 </ul>
 </div>
 <h1>Cloud Foundry CLI Reference Guide</h1>
