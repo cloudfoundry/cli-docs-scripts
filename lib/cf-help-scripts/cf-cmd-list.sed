@@ -19,6 +19,9 @@ s,^   [0-9].*$,<tr><td colspan=\"2\">\0</td></tr>,g
 # environment variables and global options have description in 2nd column
 s,^   \(.*  \)\(.*\)$,<tr><td>\1</td><td>\2</td></tr>,I
 
+# environment variable https_proxy has only a single space up to its description
+s,^   \(.*proxy.*:8080 \)\(.*\)$,<tr><td>\1</td><td>\2</td></tr>,I
+
 # section headings use full rows
 s,^\(\S.*\):\s*$,<tr><td colspan=\"2\"><h2 id=\"\1\">\1</h2></td></tr>,I
 #s,^\(\S.*\)(:\|\xef\xbc\x9a)\s*$,<tr><td colspan=\"2\"><h2 id=\"\1\">\1</h2></td></tr>,I
