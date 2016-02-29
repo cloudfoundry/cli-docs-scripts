@@ -20,6 +20,6 @@ TARGET_DIR=public/$LOCALE/cf
 mkdir -p $TARGET_DIR
 
 ./cf-cmd-list.sh $LOCALE
-./cf-cmd-help-generate.sh $LOCALE &
+./cf-cmd-help-generate.sh $LOCALE
 
 done
