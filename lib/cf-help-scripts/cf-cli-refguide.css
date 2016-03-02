@@ -16,22 +16,54 @@ h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h
 h1{font-size:2.125em}
 h2{font-size:1.6875em}
 
+.header{
+    width: 100%;
+}
+.header td.language-column{
+    vertical-align: bottom;
+    width: 200px;
+}
+hr{
+    z-index: -1;
+}
+#lang-selector{
+    height: 36px;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 4px;
+    width: 195px;
+    position: relative;
+    z-index: 10;
+}
+
+#lang-selector:hover,
+#lang-selector:active{
+    overflow: visible;
+}
+
 #lang-selector ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
   text-align: center;
+    height: 440px;
+    z-index: 10;
 }
-#lang-selector ul li { display: inline; }
-#lang-selector ul li a { text-decoration: none; }
+#lang-selector ul li {
+    display: block;
+    height: 40px;
+    background-color: #036;
+    margin: 1px 0 0;
+}
 #lang-selector ul li a {
   text-decoration: none;
-  padding: .2em 1em;
   color: #fff;
-  background-color: #036;
+  padding: 8px 16px;
+    line-height: 35px;
+    height: 35px;
 }
 
-#lang-selector ul li a:hover {
+#lang-selector ul li:hover {
   color: #fff;
   background-color: #369;
 }
