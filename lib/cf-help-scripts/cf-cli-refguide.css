@@ -6,9 +6,19 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1;
-    margin: 10px 130px 10px 130px;
     padding: 0;
-    position: relative;
+    margin: 0;
+}
+.viewPort{
+    bottom: 35px;
+    left: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 10px 130px;
+    position: fixed;
+    right: 0;
+    top: 92px;
 }
 
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
@@ -18,29 +28,58 @@ h2{font-size:1.6875em}
 
 .header{
     width: 100%;
+    background-color: #036;
+}
+.header td.title-column{
+    padding-left: 130px;
+}
+
+.header td.title-column h1{
+    color: white;
+    height: 34px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 .header td.language-column{
     vertical-align: bottom;
+    padding-bottom: 30px;
     width: 200px;
 }
 hr{
     z-index: -1;
+    margin: 0;
 }
+#home-link{
+    left: 130px;
+    position: absolute;
+    top: 70px;
+}
+#home-link a{
+    color: white;
+}
+
 #lang-selector{
     height: 36px;
     margin: 0;
     overflow: hidden;
-    padding-top: 4px;
     width: 195px;
     position: relative;
     z-index: 10;
+    border: 1px solid white;
+    border-top: none;
 }
 
 #lang-selector:hover,
 #lang-selector:active{
     overflow: visible;
 }
-
+#lang-selector span{
+    color: white;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
 #lang-selector ul {
   margin: 0;
   padding: 0;
@@ -51,21 +90,39 @@ hr{
 }
 #lang-selector ul li {
     display: block;
-    height: 40px;
+    height: 36px;
     background-color: #036;
-    margin: 1px 0 0;
+    border-top: 1px solid white;
+    width: 195px;
+    position: relative;
+    top:37px;
+}
+#lang-selector ul li#current-lang {
+    position: absolute;
+    top: 0px;
 }
 #lang-selector ul li a {
   text-decoration: none;
   color: #fff;
   padding: 8px 16px;
-    line-height: 35px;
-    height: 35px;
+    line-height: 36px;
+    height: 36px;
 }
 
 #lang-selector ul li:hover {
   color: #fff;
   background-color: #369;
+}
+
+.footer{
+    width: 100%;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    margin: 0;
+}
+.footer i{
+    margin-left: 130px;
 }
 
 .option-name{white-space:nowrap;font-family:monospace;font-weight:bold}

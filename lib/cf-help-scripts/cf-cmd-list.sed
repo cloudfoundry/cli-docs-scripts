@@ -1,5 +1,5 @@
-# remove Home link in menu
-s, <li.*Up</a></li>,,I
+# remove Index link in menu
+s,<div id="home-link">.*</div>,,I
 
 # add <table> at the start
 s,<div id=\"start\"></div>,<table>,I

@@ -13,14 +13,13 @@
 <body>
 <table class="header">
 <tr>
-<td>
+<td class="title-column">
 <h1>Cloud Foundry CLI Reference Guide</h1>
 </td>
 <td class="language-column">
 <div id="lang-selector">
 <ul>
-<li><a>Language &#9660;</a></li>
- <li><a href="../../en-US/cf/index.html">English</a></li>
+<li id="current-lang"><a href="../../en-US/cf/index.html">English</a></li>
  <li><a href="../../zh-Hans/cf/index.html">Chinese (Simplified)</a></li>
  <li><a href="../../zh-Hant/cf/index.html">Chinese (Traditional)</a></li>
  <li><a href="../../fr-FR/cf/index.html">French</a></li>
@@ -31,10 +30,12 @@
  <li><a href="../../pt-BR/cf/index.html">Portugese</a></li>
  <li><a href="../../es-ES/cf/index.html">Spanish</a></li>
 </ul>
+<span>&#9660;</span>
 </div>
 </td>
 </tr>
 </table>
 <hr>
+<div id="home-link"><a href="../../LOCALE/cf/index.html">&lt;&lt; Index</a></div>
 <div class="viewPort">
 <div id="start"></div>
