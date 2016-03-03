@@ -19,16 +19,16 @@
 <td class="language-column">
 <div id="lang-selector">
 <ul>
-<li><a href="../../en-US/cf/index.html">English</a></li>
-<li><a href="../../zh-Hans/cf/index.html">Chinese (Simplified)</a></li>
-<li><a href="../../zh-Hant/cf/index.html">Chinese (Traditional)</a></li>
-<li><a href="../../fr-FR/cf/index.html">French</a></li>
-<li><a href="../../de-DE/cf/index.html">German</a></li>
-<li><a href="../../it-IT/cf/index.html">Italian</a></li>
-<li><a href="../../ja-JP/cf/index.html">Japanese</a></li>
-<li><a href="../../ko-KR/cf/index.html">Korean</a></li>
-<li><a href="../../pt-BR/cf/index.html">Portugese</a></li>
-<li><a href="../../es-ES/cf/index.html">Spanish</a></li>
+<li><a href="../../en-US/cf">English</a></li>
+<li><a href="../../zh-Hans/cf">Chinese (Simplified)</a></li>
+<li><a href="../../zh-Hant/cf">Chinese (Traditional)</a></li>
+<li><a href="../../fr-FR/cf">French</a></li>
+<li><a href="../../de-DE/cf">German</a></li>
+<li><a href="../../it-IT/cf">Italian</a></li>
+<li><a href="../../ja-JP/cf">Japanese</a></li>
+<li><a href="../../ko-KR/cf">Korean</a></li>
+<li><a href="../../pt-BR/cf">Portugese</a></li>
+<li><a href="../../es-ES/cf">Spanish</a></li>
 </ul>
 <span>&#9660;</span>
 </div>
@@ -36,6 +36,6 @@
 </tr>
 </table>
 <hr>
-<div id="home-link"><a href="../../LOCALE/cf/index.html">&lt;&lt; Index</a></div>
+<div id="home-link"><a href="../../LOCALE/cf">&lt;&lt; Index</a></div>
 <div class="viewPort">
 <div id="start"></div>

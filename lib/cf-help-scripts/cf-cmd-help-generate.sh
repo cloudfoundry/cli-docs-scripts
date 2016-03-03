@@ -18,7 +18,7 @@ sed -i -e "s,LOCALE,$LOCALE,g" $TARGET_DIR/$CMD.html
 sed -i -e "s,\(li\)\(..a href.*%LOCALE%\),\1 id=\"current-lang\"\2,i" %TARGET_DIR%\$CMD.html
 
 #update link for other languages to this command
-sed -i -e "s,/cf/index.html,/cf/$CMD.html,i" $TARGET_DIR/$CMD.html
+sed -i -e "s,cf\"\(\">\w\),cf/$CMD.html\1,i" $TARGET_DIR/$CMD.html
 
 #revert the one for Home
 sed -i -e "s,$LOCALE/cf/$CMD.html,$LOCALE/cf/index.html,i" $TARGET_DIR/$CMD.html
