@@ -1,10 +1,8 @@
-if [ -z "${EDGE}" ]; then
-  URL="https://cli.run.pivotal.io/stable?release=linux64-binary&source=github"
+if [ -n "${EDGE}" ]; then
+  tar -zx cf-cli-edge/cf-cli_edge_linux_x86-64.tgz > cf
 else
-  URL="https://cli.run.pivotal.io/edge?arch=linux64&source=github"
+  curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 fi
-
-curl -L "$URL" | tar -zx
 
 export PATH=.:$PATH
 
