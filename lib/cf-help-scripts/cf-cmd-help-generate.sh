@@ -14,8 +14,8 @@ cp header.txt $TARGET_DIR/$CMD.html
 #set page language in <html> tag
 sed -i -e "s,LOCALE,$LOCALE,g" $TARGET_DIR/$CMD.html
 
-#unlink current language
-sed -i -e "s,li..a href.*$LOCALE.*html\(.>.*[^U][^p]\)</a>,li id=\"current-lang\1,i" $TARGET_DIR/$CMD.html
+# make current locale the language menu title
+sed -i -e "s,\(li\)\(..a href.*%LOCALE%\),\1 id=\"current-lang\"\2,i" %TARGET_DIR%\$CMD.html
 
 #update link for other languages to this command
 sed -i -e "s,/cf/index.html,/cf/$CMD.html,i" $TARGET_DIR/$CMD.html
