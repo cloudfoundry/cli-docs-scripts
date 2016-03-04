@@ -1,7 +1,7 @@
 set -ex
 
 if [ -n "${EDGE}" ]; then
-  tar -zxf cf ../../../cf-cli-edge/cf-cli_edge_linux_x86-64.tgz
+  tar -zxf ../../../cf-cli-edge/cf-cli_edge_linux_x86-64.tgz -C .
 else
   curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 fi
