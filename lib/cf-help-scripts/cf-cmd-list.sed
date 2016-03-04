@@ -29,3 +29,4 @@ s,^\(\S.*\):\s*$,<tr><td colspan=\"2\"><h2 id=\"\1\">\1</h2></td></tr>,I
 # close </table> at the end
 $a</table>
 $r footer.txt
+
