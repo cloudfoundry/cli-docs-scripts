@@ -1,3 +1,5 @@
+set -ex
+
 if [ -n "${EDGE}" ]; then
   tar -zx cf-cli-edge/cf-cli_edge_linux_x86-64.tgz > cf
 else

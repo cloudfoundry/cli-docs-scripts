@@ -1,3 +1,5 @@
+set -ex
+
 LOCALE=$1
 if [ -z "$1" ]
   then
