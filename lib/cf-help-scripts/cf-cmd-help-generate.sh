@@ -3,7 +3,7 @@ set -ex
 LOCALE=$1
 if [ -z "$1" ]
   then
-    LOCALE=en_US
+    LOCALE=en-US
 fi
 
 TARGET_DIR=public/$LOCALE/cf
@@ -32,12 +32,12 @@ sed -i -e "s/title>/\0$CMD - /i" $TARGET_DIR/$CMD.html
 #insert command name into page header
 sed -i -e "s/h1>/\0$CMD - /i" $TARGET_DIR/$CMD.html
 
-LANG=$LOCALE cf h $CMD > $TARGET_DIR/$CMD.txt
+LANG=$LOCALE cf help $CMD > $TARGET_DIR/$CMD.txt
 
 #HTML escape <>&"
 sed -e "s,\&,\&amp;,g; s,<,\&lt;,g; s,>,\&gt;,g;" $TARGET_DIR/$CMD.txt >> $TARGET_DIR/$CMD.html
 
-#apply various replacements
+#apply various replacements, add footer
 sed -i -f cf-cmd-help-generate.sed $TARGET_DIR/$CMD.html
 
 #sed -i -e "/^   cf \w.+/{N; s/^   cf \w.+.*\n\n/<code>\0<\/code>/g}" $TARGET_DIR/$CMD.html
