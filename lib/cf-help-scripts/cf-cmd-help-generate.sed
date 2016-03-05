@@ -16,7 +16,7 @@ s,^   \[-.*$,<code>\0</code>,g
 s,^   \(-.*\)  \(.*\)$,<dt><span class=\"option-name\">\1</span></dt><dd><p>\2</p></dd>,g
 
 # create hyperlinks to other commands
-s,'cf \([a-z-]*\)','<a class=\"ref-to-other-cmd\" href=\"\1.html\">cf \1</a>',I
+s,'cf \([a-z]*\)','<a class=\"ref-to-other-cmd\" href=\"\1.html\">cf \1</a>',I
 
 # styling of quoted constants and options ('none', '-f', etc.)
 s,'\([a-z0-9/.#:-]*\)','<span class=\"term\">\1</span>',g
