@@ -2,4 +2,5 @@
 applications:
 - name: docs-cf-cli-edge
   buildpack: staticfile_buildpack
+  memory: 256M
   path: public
