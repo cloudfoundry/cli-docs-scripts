@@ -10,8 +10,9 @@ s,^   \(cf - .*\)$,<tr><td colspan=\"2\">\1</td></tr>,I
 # create hyperlinks for commands
 s,^   \([a-z-]*\) \(.*\)$,<tr><td><a href=\"\1.html\">\1</a></td><td>\2</td></tr>,I
 
-# usage uses full row
+# usage uses full row (note usage omits initial [env..var] cli >6.16.1)
 s,^   \(\[.*\)$,<tr><td colspan=\"2\">\1</td></tr>,I
+s,^   \(cf \[.*\)$,<tr><td colspan=\"2\">\1</td></tr>,I
 
 # version uses full row
 s,^   [0-9].*$,<tr><td colspan=\"2\">\0</td></tr>,g
