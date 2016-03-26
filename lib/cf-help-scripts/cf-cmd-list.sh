@@ -23,4 +23,7 @@ cf help >> $TARGET_DIR/index.html
 #apply various replacements, add footer
 sed -i -f cf-cmd-list.sed $TARGET_DIR/index.html
 
+# add separator between groups of commands in a section
+sed -i -e "/^$/ {N; s,<tr><td>,<tr class='separator'><td></td><td></td></tr>\n<tr><td>,g}" $TARGET_DIR/index.html
+
 sed -i -e "s/CF_VERSION/`cat cf-version.txt`/i" $TARGET_DIR/index.html

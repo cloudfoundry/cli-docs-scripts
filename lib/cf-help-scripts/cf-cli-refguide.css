@@ -125,6 +125,7 @@ hr{
     margin-left: 130px;
 }
 
+.separator{height: 8px;}
 .option-name{white-space:nowrap;font-family:monospace;font-weight:bold}
 .term{white-space:nowrap;font-family:monospace;font-weight:bold}
 .alias-item{white-space:nowrap;font-family:monospace;font-weight:bold}
