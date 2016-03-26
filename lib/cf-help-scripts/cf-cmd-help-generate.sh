@@ -28,7 +28,8 @@ sed -i -e "s/title>/\0$CMD - /i" $TARGET_DIR/$CMD.html
 #insert command name into page header
 sed -i -e "s/h1>/\0$CMD - /i" $TARGET_DIR/$CMD.html
 
-LANG=$LOCALE cf help $CMD > $TARGET_DIR/$CMD.txt
+cf config --locale $LOCALE
+cf help $CMD > $TARGET_DIR/$CMD.txt
 
 #HTML escape <>&"
 sed -e "s,\&,\&amp;,g; s,<,\&lt;,g; s,>,\&gt;,g;" $TARGET_DIR/$CMD.txt >> $TARGET_DIR/$CMD.html
