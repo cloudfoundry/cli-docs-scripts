@@ -7,15 +7,15 @@ s,<div id=\"start\"></div>,<table>,I
 # move everything into a table for vertical alignment across sections
 s,^   \(cf - .*\)$,<tr><td colspan=\"2\">\1</td></tr>,I
 
-# create hyperlinks for commands
-s,^   \([a-z-]*\) \(.*\)$,<tr><td><a href=\"\1.html\">\1</a></td><td>\2</td></tr>,I
-
 # usage uses full row (note usage omits initial [env..var] cli >6.16.1)
 s,^   \(\[.*\)$,<tr><td colspan=\"2\">\1</td></tr>,I
 s,^   \(cf \[.*\)$,<tr><td colspan=\"2\">\1</td></tr>,I
 
 # version uses full row
 s,^   [0-9].*$,<tr><td colspan=\"2\">\0</td></tr>,g
+
+# create hyperlinks for commands
+s,^   \([a-z][a-z-]*\) \(.*\)$,<tr><td><a href=\"\1.html\">\1</a></td><td>\2</td></tr>,I
 
 # environment variables and global options have description in 2nd column
 s,^   \(.*  \)\(.*\)$,<tr><td>\1</td><td>\2</td></tr>,I
