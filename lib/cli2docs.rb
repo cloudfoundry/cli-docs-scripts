@@ -82,7 +82,7 @@ title: Cloud Foundry CLI Reference Guide
                   description ||= '&nbsp;'
                   <<-EOS
     <tr>
-      <td>#{command}</td>
+      <td><a href='http://cli.cloudfoundry.org/en-US/cf/#{command}.html' target='_blank'>#{command}</a></td>
       <td>#{description}</td>
     </tr>
                   EOS
