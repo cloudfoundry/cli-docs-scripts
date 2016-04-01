@@ -1,8 +1,8 @@
 ---
 applications:
 - name: docs-cf-cli-prod
-  domain: cloudfoundry.org
-  host: cli
+  domain: cli.cloudfoundry.org
+  no-hostname: true
   buildpack: staticfile_buildpack
   memory: 256M
   path: public
