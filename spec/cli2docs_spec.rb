@@ -15,6 +15,9 @@ GETTING STARTED:
 
    api                                    Set or view target api url
 
+ADD/REMOVE PLUGIN:
+   plugins                                List all available plugin commands
+
 INSTALLED PLUGIN COMMANDS:
 
 ENVIRONMENT VARIABLES:
@@ -52,7 +55,7 @@ title: Cloud Foundry CLI Reference Guide
       <td></td>
     </tr>
     <tr>
-      <td>target</td>
+      <td><a href='http://cli.cloudfoundry.org/en-US/cf/target.html' target='_blank'>target</a></td>
       <td>Set or view the targeted org or space</td>
     </tr>
     <tr class='separator'>
@@ -60,8 +63,28 @@ title: Cloud Foundry CLI Reference Guide
       <td></td>
     </tr>
     <tr>
-      <td>api</td>
+      <td><a href='http://cli.cloudfoundry.org/en-US/cf/api.html' target='_blank'>api</a></td>
       <td>Set or view target api url</td>
+    </tr>
+  </tbody>
+</table>
+
+## <a id='addremove-plugin'></a> Add/remove Plugin
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class='separator'>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href='http://cli.cloudfoundry.org/en-US/cf/plugins.html' target='_blank'>plugins</a></td>
+      <td>List all available plugin commands</td>
     </tr>
   </tbody>
 </table>

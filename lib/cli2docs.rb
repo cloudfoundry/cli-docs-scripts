@@ -45,7 +45,7 @@ title: Cloud Foundry CLI Reference Guide
       out = []
 
       sections.each do |header, *body|
-        id = header.downcase.gsub(' ', '-')
+        id = header.downcase.gsub(' ', '-').gsub('/', '')
         text = header.split(' ').map(&:capitalize).join(' ')
         out << "## <a id='#{id}'></a> #{text}\n"
 
@@ -54,9 +54,9 @@ title: Cloud Foundry CLI Reference Guide
                       when /NAME|USAGE|VERSION/
                         "<p>#{body.join("\n")}</p>"
                       when "GLOBAL OPTIONS"
-                        self.tablify_body(body, separator: /\s{2,}/, column_name: 'Option')
+                        self.tablify_body(body, separator: /\s{2,}/, column_name: 'Option', no_link: true)
                       when "ENVIRONMENT VARIABLES"
-                        self.tablify_body(body, column_name: 'Variable')
+                        self.tablify_body(body, column_name: 'Variable', no_link: true)
                       else
                         self.tablify_body(body)
                     end
@@ -68,6 +68,7 @@ title: Cloud Foundry CLI Reference Guide
     def tablify_body(body, **options)
       separator = options.fetch(:separator, /\s+/)
       column_name = options.fetch(:column_name, 'Command')
+      no_link = options.fetch(:no_link, false)
 
       rows = body.inject('') do |rows, line|
         rows << if line.empty?
@@ -80,9 +81,12 @@ title: Cloud Foundry CLI Reference Guide
                 else
                   command, description = line.split(separator, 2)
                   description ||= '&nbsp;'
+                  unless no_link
+                    command = "<a href='http://cli.cloudfoundry.org/en-US/cf/#{command}.html' target='_blank'>#{command}</a>"
+                  end
                   <<-EOS
     <tr>
-      <td><a href='http://cli.cloudfoundry.org/en-US/cf/#{command}.html' target='_blank'>#{command}</a></td>
+      <td>#{command}</td>
       <td>#{description}</td>
     </tr>
                   EOS
