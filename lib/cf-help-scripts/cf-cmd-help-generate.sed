@@ -24,6 +24,9 @@ s,'\([a-z0-9/.#:-]*\)','<span class=\"term\">\1</span>',g
 # styling of alias
 s/^   [a-z]\{1,4\}$/<div class=\"alias-item\">\0<\/div>/I
 
+# code styling to indented platform specific examples (see create-service)
+s,^      cf \w.*,<code>\0</code>,g
+
 # replace spaces with nbsp in options
 s,\(-\w\) \(\w\),\1\&nbsp;\2,g
 s,\(--.*\) \(\w\),\1\&nbsp;\2,g

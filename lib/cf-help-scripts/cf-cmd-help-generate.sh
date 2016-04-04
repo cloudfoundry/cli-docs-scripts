@@ -43,9 +43,6 @@ sed -i -f cf-cmd-help-generate.sed $TARGET_DIR/$CMD.html
 sed -i -e "/<\/code>$/ {N; s/<\/code>\n<code>   \[-/ \[-/g}" $TARGET_DIR/$CMD.html
 sed -i -e "/<\/code>$/ {N; s/<\/code>\n<code>   \[-/ \[-/g}" $TARGET_DIR/$CMD.html
 
-#indented platform specific examples (see create-service)
-sed -i -e "s/^      cf $CMD.*/<div class=\"syntax\"><pre>\0<\/pre><\/div>/g" $TARGET_DIR/$CMD.html
-
 #bold cf command
 sed -i -e "s,cf $CMD,<b>\0</b>,g" $TARGET_DIR/$CMD.html
 
