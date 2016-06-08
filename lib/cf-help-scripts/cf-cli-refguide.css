@@ -187,3 +187,79 @@ dl {
   opacity: 1;
   visibility: visible;
 }
+
+.command, .option {
+    padding-top: 6px;
+    line-height: 1.2;
+    vertical-align: text-top;
+    display: table-row;
+}
+
+.tr {
+    display: table-row;
+}
+
+.command-name, .command-description, .option-name, .option-description {
+    display: table-cell;
+}
+
+.command-name, .option-name {
+    width: 40%;
+}
+
+.command-description, .option-description {
+    width: 50%;
+}
+
+.footer {
+    padding: 1em;
+    border-top: 1px solid black;
+    background: white;
+}
+
+@media(max-width:800px) {
+    body { font-size: 14px;  }
+
+    h1 { font-size: 18px; }
+    h2 { font-size: 16px; }
+
+    .header { font-size: 12px; }
+    .header td.language-column { width: 150px; }
+    #lang-selector { width: 150px; }
+    #lang-selector ul li { width: 150px; max-height: 300px; }
+    .header td.title-column {
+
+       padding-left: 0.5em;
+                                        }
+    tbody {
+        width: 90%;
+    }
+
+    .viewPort {
+        padding: 20px;
+        bottom: 50px
+    }
+
+    .command, .option {
+        display: block;
+    }
+
+    .tr {
+        display: block;
+    }
+
+    .command-name, .command-description, .option-name, .option-description {
+        display: block;
+        width: 100%;
+    }
+
+    .footer {
+        font-size: 12px;
+        height: 50px;
+        padding: 10px;
+    }
+
+    .footer i {
+        margin-left: 0;
+    }
+}
