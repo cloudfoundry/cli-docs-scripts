@@ -1,6 +1,5 @@
 </div>
 <div class="footer">
-<br><hr>
 <small><i>This page was generated from CF_VERSION. Any issues in the text, please report using the <a href="https://github.com/cloudfoundry/cli/issues">CLI issue tracker</a>.</i></small>
 </div>
 </body>
