@@ -18,9 +18,6 @@ s,^   \(-.*\)  \(.*\)$,<dt><span class=\"option-name\">\1</span></dt><dd><p>\2</
 # create hyperlinks to other commands
 s,'cf \([a-z]*\)','<a class=\"ref-to-other-cmd\" href=\"\1.html\">cf \1</a>',I
 
-# styling of quoted constants and options ('none', '-f', etc.)
-s,'\([a-z0-9/.#:-]*\)',<span class=\"term\">\1</span>,g
-
 # styling of alias
 s/^   [a-z]\{1,4\}$/<div class=\"alias-item\">\0<\/div>/I
 
@@ -33,6 +30,9 @@ s,\(--.*\) \(\w\),\1\&nbsp;\2,g
 #s,-no-,-no\&#8209;,g
 #s,--,\&#8209;\&#8209;,g
 #s,-\([a-z]\),\&#8209;\1,g
+
+# styling of quoted constants and options ('none', '-f', etc.)
+s,'\([a-z0-9/.#:-]*\)',<span class=\"term\">\1</span>,g
 
 # add line breaks
 # s/[^>]$/\0<br>/g
