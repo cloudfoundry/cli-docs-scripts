@@ -7,9 +7,8 @@ s,<div id=\"start\"></div>,<div>,I
 # move everything into a table for vertical alignment across sections
 s,^   \(cf - .*\)$,<div><div colspan=\"2\">\1</div></div>,I
 
-# usage uses full row (note usage omits initial [env..var] cli >6.16.1)
-s,^   \(\[.*\)$,<div><div colspan=\"2\">\1</div></div>,I
-s,^   \(cf \[.*\)$,<div><div colspan=\"2\">\1</div></div>,I
+# usage uses full row, cf and command in bold
+s,^   cf \(\[.*\]\) \([^\[\]*\) \(\[.*\)$,<div><div colspan=\"2\"><code><b>cf</b> \1 <b>\2</b> \3</code></div></div>,I
 
 # version uses full row
 s,^   [0-9].*$,<div><div colspan=\"2\">\0</div></div>,g
