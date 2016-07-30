@@ -127,7 +127,7 @@ hr{
 
 .separator{height: 8px;}
 .option-name{white-space:nowrap;font-family:monospace;font-weight:bold}
-.term{white-space:nowrap;font-family:monospace;font-weight:bold}
+.term{white-space:nowrap;font-weight:bold}
 .alias-item{white-space:nowrap;font-family:monospace;font-weight:bold}
 code {font-family:monospace;white-space:normal;background-color:#eee;width:auto;display:block;line-height: 15.56px; padding: 5px 20px 5px 20px; margin: 15px 0 15px 0;}
 
