@@ -21,6 +21,9 @@ s,'cf \([a-z]*\)','<a class=\"ref-to-other-cmd\" href=\"\1.html\">cf \1</a>',I
 # styling of alias
 s/^   [a-z]\{1,4\}$/<div class=\"alias-item\">\0<\/div>/I
 
+# styling of role options
+s,^   '\(\(Billing\|Org\|Space\).*\)'\(.*\),<ul><b>\1</b>\3</ul>,g
+
 # code styling to indented platform specific examples (see create-service)
 s,^      cf \w.*,<code>\0</code>,g
 
