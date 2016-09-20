@@ -18,7 +18,7 @@ sed -i -e "s/LOCALE/$LOCALE/i" $TARGET_DIR/index.html
 sed -i -e "s,\(li\)\(..a href.*$LOCALE\),\1 id=\"current-lang\"\2,i" $TARGET_DIR/index.html
 
 cf config --locale $LOCALE
-cf help >> $TARGET_DIR/index.html
+cf help -a >> $TARGET_DIR/index.html
 
 #apply various replacements, add footer
 sed -i -f cf-cmd-list.sed $TARGET_DIR/index.html
