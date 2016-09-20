@@ -21,5 +21,5 @@ end
 desc 'Format `cf help` output to STDOUT'
 task :format do
   require_relative 'lib/cli2docs'
-  puts Cli2Docs.format `cf help`
+  puts Cli2Docs.format `cf help -a`
 end
