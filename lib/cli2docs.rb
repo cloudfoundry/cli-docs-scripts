@@ -33,7 +33,7 @@ title: Cloud Foundry CLI Reference Guide
         if line =~ HEADER_REGEX
           sections << [$1]
         else
-          sections.last << line.strip
+          sections.last << line.strip if sections.last
         end
       end
 
