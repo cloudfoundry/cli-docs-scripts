@@ -10,6 +10,7 @@ fi
 
 export PATH=.:$PATH
 
+cf config --color false
 cf -v > cf-version.txt
 cf h -a | sed -n '/GETTING/,/ENVIRONMENT VARIABLES:/{/GETTING/b;/ENVIRONMENT VARIABLES:/b;p}' | sed -r '/.*:$/d;/^^$/d;s/   ([a-z-]+).*$/\1/' | sed '/.?*\:/d' > cf-cmd-list.txt
 
