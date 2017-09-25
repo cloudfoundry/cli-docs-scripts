@@ -14,7 +14,7 @@ s,^   cf \(\[.*\]\) \([^\[\]*\) \(\[.*\)$,<div><div colspan=\"2\"><code><b>cf</b
 s,^   [0-9].*$,<div><div colspan=\"2\">\0</div></div>,g
 
 # create hyperlinks for commands
-s,^   \([a-z][a-z-]*\) \(.*\)$,<div class="command"><div class="command-name"><a href=\"\1.html\">\1</a></div><div class="command-description">\2</div></div>,I
+s,^   \([a-z][a-z0-9-]*\) \(.*\)$,<div class="command"><div class="command-name"><a href=\"\1.html\">\1</a></div><div class="command-description">\2</div></div>,I
 
 # environment variables and global options have description in 2nd column
 s,^   \(.*  \)\(.*\)$,<div class="option"><div class="option-name">\1</div><div class="option-description">\2</div></div>,I
