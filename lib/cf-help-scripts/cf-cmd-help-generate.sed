@@ -15,7 +15,7 @@ s,^   \[-.*$,<code>\0</code>,g
 # options into data table
 s,^   \(-.*\)  \(.*\)$,<dt><span class=\"option-name\">\1</span></dt><dd><p>\2</p></dd>,g
 
-# align environment variables
+# styling of environment variables
 s,^   \([A-Z_]*=[a-zA-Z0-9]*\) *\(.*\)$,<span class=\"environment-var\">\1</span> \2<br>,g
 
 # create hyperlinks to other commands
