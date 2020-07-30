@@ -1,13 +1,17 @@
 set -ex
 
-LOCALE=$1
-if [ -z "$1" ]
-  then
-    LOCALE=en-US
+CF_BINARY=$1
+if [ -z "$CF_BINARY" ]; then
+  echo "CF_BINARY required"
+  exit 1
 fi
 
-TARGET_DIR=public/$LOCALE/cf
-mkdir -p $TARGET_DIR
+CF_BINARY_VERSION="$($CF_BINARY -v | sed 's|cf version \([[:digit:]]*\).*|\1|')"
+
+LOCALE=$2
+if [ -z "$LOCALE" ]; then
+  LOCALE=en-US
+fi
 
 cp header.txt $TARGET_DIR/index.html
 
@@ -17,8 +21,8 @@ sed -i -e "s/LOCALE/$LOCALE/i" $TARGET_DIR/index.html
 # make current locale the language menu title
 sed -i -e "s,\(li\)\(..a href.*$LOCALE\),\1 id=\"current-lang\"\2,i" $TARGET_DIR/index.html
 
-cf config --locale $LOCALE
-cf help -a >> $TARGET_DIR/index.html
+$CF_BINARY config --locale $LOCALE
+$CF_BINARY help -a >> $TARGET_DIR/index.html
 
 #apply various replacements, add footer
 sed -i -f cf-cmd-list.sed $TARGET_DIR/index.html
