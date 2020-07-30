@@ -17,6 +17,12 @@
 <td class="title-column">
 <h1>Cloud Foundry CLI Reference Guide</h1>
 </td>
+<td class="version-column">
+  <ul>
+    <li><a href="../../LOCALE/v6">v6</a></li>
+    <li><a href="../../LOCALE/v7">v7</a></li>
+  </ul>
+</td>
 <td class="language-column">
 <div id="lang-selector">
 <ul>

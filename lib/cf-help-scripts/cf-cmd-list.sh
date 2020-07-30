@@ -1,4 +1,4 @@
-set -ex
+set -e
 
 CF_BINARY=$1
 if [ -z "$CF_BINARY" ]; then

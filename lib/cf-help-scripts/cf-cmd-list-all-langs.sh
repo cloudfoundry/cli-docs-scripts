@@ -1,4 +1,4 @@
-set -ex
+set -e
 
 export PATH=.:$PATH
 
@@ -12,7 +12,6 @@ generate_docs_for_cf() {
   $cf_binary h -a | sed -n '/GETTING/,/ENVIRONMENT VARIABLES:/{/GETTING/b;/ENVIRONMENT VARIABLES:/b;p}' | sed -r '/.*:$/d;/^^$/d;s/   ([a-z-]+).*$/\1/' | sed '/.?*\:/d' > cf-cmd-list.txt
   $cf_binary h -a | sed -n '/experimental/,${/experimental/b;;p}' | sed -r '/.*:$/d;/^^$/d;s/   ([a-z0-9-]+) .*$/\1/'  >> cf-cmd-list.txt
 
-  # TODO: do not commit. only doing en-US for quick testing
   for LOCALE in de-DE en-US es-ES fr-FR it-IT ja-JP ko-KR pt-BR zh-Hans zh-Hant; do
     #Non-programmer replaces the following with the above: for LOCALE in `./cf config --locale DUMMY | tail -n+3 | tr _ -`; do
     #for LOCALE in `echo en_US`; do
@@ -22,13 +21,8 @@ generate_docs_for_cf() {
     export TARGET_DIR=public/$LOCALE/v${cf_binary_version}
     mkdir -p $TARGET_DIR
 
-    # TODO: backwards compatiblity? homepage?
-    # if [ $cf_binary_version = "6" ]; then
-    #   ln -s public/$LOCALE/v6 public/$LOCALE/cf
-    # fi
-
-    ./cf-cmd-list.sh $cf_binary $LOCALE
-    ./cf-cmd-help-generate.sh $cf_binary $LOCALE
+    ./cf-cmd-list.sh $cf_binary $LOCALE &> /tmp/docs.log
+    ./cf-cmd-help-generate.sh $cf_binary $LOCALE &> /tmp/docs.log
   done
 }
 
