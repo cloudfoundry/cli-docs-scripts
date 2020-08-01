@@ -26,16 +26,16 @@
 <td class="language-column">
 <div id="lang-selector">
 <ul>
-<li><a href="../../en-US/cf">English</a></li>
-<li><a href="../../zh-Hans/cf">Chinese (Simplified)</a></li>
-<li><a href="../../zh-Hant/cf">Chinese (Traditional)</a></li>
-<li><a href="../../fr-FR/cf">French</a></li>
-<li><a href="../../de-DE/cf">German</a></li>
-<li><a href="../../it-IT/cf">Italian</a></li>
-<li><a href="../../ja-JP/cf">Japanese</a></li>
-<li><a href="../../ko-KR/cf">Korean</a></li>
-<li><a href="../../pt-BR/cf">Portugese</a></li>
-<li><a href="../../es-ES/cf">Spanish</a></li>
+<li><a href="../../en-US/CLI_MAJOR_VERSION">English</a></li>
+<li><a href="../../zh-Hans/CLI_MAJOR_VERSION">Chinese (Simplified)</a></li>
+<li><a href="../../zh-Hant/CLI_MAJOR_VERSION">Chinese (Traditional)</a></li>
+<li><a href="../../fr-FR/CLI_MAJOR_VERSION">French</a></li>
+<li><a href="../../de-DE/CLI_MAJOR_VERSION">German</a></li>
+<li><a href="../../it-IT/CLI_MAJOR_VERSION">Italian</a></li>
+<li><a href="../../ja-JP/CLI_MAJOR_VERSION">Japanese</a></li>
+<li><a href="../../ko-KR/CLI_MAJOR_VERSION">Korean</a></li>
+<li><a href="../../pt-BR/CLI_MAJOR_VERSION">Portugese</a></li>
+<li><a href="../../es-ES/CLI_MAJOR_VERSION">Spanish</a></li>
 </ul>
 <span>&#9660;</span>
 </div>

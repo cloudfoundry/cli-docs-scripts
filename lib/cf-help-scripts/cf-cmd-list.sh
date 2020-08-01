@@ -1,33 +1,48 @@
-set -e
+#!/bin/bash
 
-CF_BINARY=$1
-if [ -z "$CF_BINARY" ]; then
-  echo "CF_BINARY required"
-  exit 1
-fi
+set -eu
 
-CF_BINARY_VERSION="$($CF_BINARY -v | sed 's|cf version \([[:digit:]]*\).*|\1|')"
+main() {
+  cli_binary="$1"
+  locale="$2"
 
-LOCALE=$2
-if [ -z "$LOCALE" ]; then
-  LOCALE=en-US
-fi
+  if [ ! -x $cli_binary ]; then
+    echo "Error: could not execute cli_binary"
+    exit 1
+  fi
 
-cp header.txt $TARGET_DIR/index.html
+  if [ -z $TARGET_DIR ]; then
+    echo "Error: env TARGET_DIR required"
+    exit 1
+  fi
 
-# set page language in <html> tag
-sed -i -e "s/LOCALE/$LOCALE/i" $TARGET_DIR/index.html
+  cli_major_version="$($cli_binary -v | sed 's|cf [Vv]ersion \([[:digit:]]*\).*|\1|')"
+  re='^[0-9]+$'
+  if ! [[ $cli_major_version =~ $re ]] ; then
+    echo "Error: cli_binary $cli_binary has a non integer major verison: $cli_major_version"
+    exit 1
+  fi
 
-# make current locale the language menu title
-sed -i -e "s,\(li\)\(..a href.*$LOCALE\),\1 id=\"current-lang\"\2,i" $TARGET_DIR/index.html
+  cp header.txt $TARGET_DIR/index.html
 
-$CF_BINARY config --locale $LOCALE
-$CF_BINARY help -a >> $TARGET_DIR/index.html
+  # set page language in <html> tag
+  sed -i -e "s/LOCALE/$locale/i" $TARGET_DIR/index.html
 
-#apply various replacements, add footer
-sed -i -f cf-cmd-list.sed $TARGET_DIR/index.html
+  # make current locale the language menu title
+  sed -i -e "s,\(li\)\(..a href.*$locale\),\1 id=\"current-lang\"\2,i" $TARGET_DIR/index.html
 
-# add separator between groups of commands in a section
-sed -i -e "/^$/ {N; s,<tr><td>,<tr class='separator'><td></td><td></td></tr>\n<tr><td>,g}" $TARGET_DIR/index.html
+  $cli_binary config --locale $locale > /dev/null
+  $cli_binary help -a >> $TARGET_DIR/index.html
 
-sed -i -e "s/CF_VERSION/`cat cf-version.txt`/i" $TARGET_DIR/index.html
+  #apply various replacements, add footer
+  sed -i -f cf-cmd-list.sed $TARGET_DIR/index.html
+
+  # add separator between groups of commands in a section
+  sed -i -e "/^$/ {N; s,<tr><td>,<tr class='separator'><td></td><td></td></tr>\n<tr><td>,g}" $TARGET_DIR/index.html
+
+  sed -i -e "s/CF_VERSION/`cat cf-version.txt`/i" $TARGET_DIR/index.html
+
+  sed -i -e "s/CLI_MAJOR_VERSION/v$cli_major_version/i" $TARGET_DIR/index.html
+}
+
+main "$@"
