@@ -4,7 +4,8 @@ set -eu
 
 main() {
   cli_binary="$1"
-  locale="$2"
+  cli_major_version="$2"
+  locale="$3"
 
   if [ ! -x $cli_binary ]; then
     echo "Error: could not execute cli_binary"
@@ -16,7 +17,6 @@ main() {
     exit 1
   fi
 
-  cli_major_version="$($cli_binary -v | sed 's|cf [Vv]ersion \([[:digit:]]*\).*|\1|')"
   re='^[0-9]+$'
   if ! [[ $cli_major_version =~ $re ]] ; then
     echo "Error: cli_binary $cli_binary has a non integer major verison: $cli_major_version"
@@ -29,7 +29,10 @@ main() {
   sed -i -e "s/LOCALE/$locale/i" $TARGET_DIR/index.html
 
   # make current locale the language menu title
-  sed -i -e "s,\(li\)\(..a href.*$locale\),\1 id=\"current-lang\"\2,i" $TARGET_DIR/index.html
+  sed -i -e "s,\(li\)\(..a href.*$locale/CLI_MAJOR_VERSION\),\1 id=\"current-lang\"\2,i" $TARGET_DIR/index.html
+
+  # make current version the version menu title
+  sed -i -e "s,\(li\)\(..a href.*v$cli_major_version\),\1 id=\"current-lang\"\2,i" $TARGET_DIR/index.html
 
   $cli_binary config --locale $locale > /dev/null
   $cli_binary help -a >> $TARGET_DIR/index.html

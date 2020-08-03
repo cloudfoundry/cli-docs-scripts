@@ -21,8 +21,8 @@
 <td class="language-column">
   <div id="lang-selector">
     <ul>
-      <li><a href="../../LOCALE/v6">V6</a></li>
-      <li><a href="../../LOCALE/v7">V7</a></li>
+      <li><a href="../../LOCALE/v6/CMD.html">V6</a></li>
+      <li><a href="../../LOCALE/v7/CMD.html">V7</a></li>
     </ul>
     <span>&#9660;</span>
   </div>
@@ -31,16 +31,16 @@
 <td class="language-column">
   <div id="lang-selector">
     <ul>
-      <li><a href="../../en-US/CLI_MAJOR_VERSION">English</a></li>
-      <li><a href="../../zh-Hans/CLI_MAJOR_VERSION">Chinese (Simplified)</a></li>
-      <li><a href="../../zh-Hant/CLI_MAJOR_VERSION">Chinese (Traditional)</a></li>
-      <li><a href="../../fr-FR/CLI_MAJOR_VERSION">French</a></li>
-      <li><a href="../../de-DE/CLI_MAJOR_VERSION">German</a></li>
-      <li><a href="../../it-IT/CLI_MAJOR_VERSION">Italian</a></li>
-      <li><a href="../../ja-JP/CLI_MAJOR_VERSION">Japanese</a></li>
-      <li><a href="../../ko-KR/CLI_MAJOR_VERSION">Korean</a></li>
-      <li><a href="../../pt-BR/CLI_MAJOR_VERSION">Portuguese</a></li>
-      <li><a href="../../es-ES/CLI_MAJOR_VERSION">Spanish</a></li>
+      <li><a href="../../en-US/CLI_MAJOR_VERSION/CMD.html">English</a></li>
+      <li><a href="../../zh-Hans/CLI_MAJOR_VERSION/CMD.html">Chinese (Simplified)</a></li>
+      <li><a href="../../zh-Hant/CLI_MAJOR_VERSION/CMD.html">Chinese (Traditional)</a></li>
+      <li><a href="../../fr-FR/CLI_MAJOR_VERSION/CMD.html">French</a></li>
+      <li><a href="../../de-DE/CLI_MAJOR_VERSION/CMD.html">German</a></li>
+      <li><a href="../../it-IT/CLI_MAJOR_VERSION/CMD.html">Italian</a></li>
+      <li><a href="../../ja-JP/CLI_MAJOR_VERSION/CMD.html">Japanese</a></li>
+      <li><a href="../../ko-KR/CLI_MAJOR_VERSION/CMD.html">Korean</a></li>
+      <li><a href="../../pt-BR/CLI_MAJOR_VERSION/CMD.html">Portuguese</a></li>
+      <li><a href="../../es-ES/CLI_MAJOR_VERSION/CMD.html">Spanish</a></li>
     </ul>
     <span>&#9660;</span>
   </div>

@@ -3,13 +3,12 @@
 set -eu
 
 export PATH=.:$PATH
-# LOCALES="en-US"
 LOCALES="de-DE en-US es-ES fr-FR it-IT ja-JP ko-KR pt-BR zh-Hans zh-Hant"
 
 generate_docs_for_cf() {
   cli_binary=$1
 
-  cli_major_version="$($cli_binary -v | sed 's|cf [Vv]ersion \([[:digit:]]*\).*|\1|')"
+  cli_major_version="$($cli_binary -v | sed 's|cf version \([[:digit:]]*\).*|\1|')"
   re='^[0-9]+$'
   if ! [[ $cli_major_version =~ $re ]]; then
     echo "error: cli_binary $cli_binary has a non integer major verison: $cli_major_version"
@@ -29,9 +28,8 @@ generate_docs_for_cf() {
     export TARGET_DIR=public/$locale/v$cli_major_version
     mkdir -p $TARGET_DIR
 
-    # TODO: remove dev/null
-    ./cf-cmd-list.sh $cli_binary $locale
-    ./cf-cmd-help-generate.sh $cli_binary $locale
+    ./cf-cmd-list.sh $cli_binary $cli_major_version $locale
+    ./cf-cmd-help-generate.sh $cli_binary $cli_major_version $locale
   done
 }
 
