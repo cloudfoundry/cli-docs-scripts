@@ -55,7 +55,7 @@ title: Cloud Foundry CLI Reference Guide
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://cli.cloudfoundry.org/en-US/cf/target.html' target='_blank'>target</a></td>
+      <td><a href='http://cli.cloudfoundry.org/en-US/v6/target.html' target='_blank'>target</a></td>
       <td>Set or view the targeted org or space</td>
     </tr>
     <tr class='separator'>
@@ -63,7 +63,7 @@ title: Cloud Foundry CLI Reference Guide
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://cli.cloudfoundry.org/en-US/cf/api.html' target='_blank'>api</a></td>
+      <td><a href='http://cli.cloudfoundry.org/en-US/v6/api.html' target='_blank'>api</a></td>
       <td>Set or view target api url</td>
     </tr>
   </tbody>
@@ -83,7 +83,7 @@ title: Cloud Foundry CLI Reference Guide
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://cli.cloudfoundry.org/en-US/cf/plugins.html' target='_blank'>plugins</a></td>
+      <td><a href='http://cli.cloudfoundry.org/en-US/v6/plugins.html' target='_blank'>plugins</a></td>
       <td>List all available plugin commands</td>
     </tr>
   </tbody>

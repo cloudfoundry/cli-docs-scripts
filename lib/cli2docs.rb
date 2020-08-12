@@ -82,7 +82,7 @@ title: Cloud Foundry CLI Reference Guide
                   command, description = line.split(separator, 2)
                   description ||= '&nbsp;'
                   unless no_link
-                    command = "<a href='http://cli.cloudfoundry.org/en-US/cf/#{command}.html' target='_blank'>#{command}</a>"
+                    command = "<a href='http://cli.cloudfoundry.org/en-US/v6/#{command}.html' target='_blank'>#{command}</a>"
                   end
                   <<-EOS
     <tr>
