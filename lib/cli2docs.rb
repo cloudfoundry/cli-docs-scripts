@@ -26,7 +26,7 @@ title: Cloud Foundry CLI Reference Guide
 </table>
     EOS
 
-    def format(cf_help)
+    def format(cf_help, cli_major_version)
       sections = []
 
       cf_help.each_line do |line|
@@ -54,18 +54,18 @@ title: Cloud Foundry CLI Reference Guide
                       when /NAME|USAGE|VERSION/
                         "<p>#{body.join("\n")}</p>"
                       when "GLOBAL OPTIONS"
-                        self.tablify_body(body, separator: /\s{2,}/, column_name: 'Option', no_link: true)
+                        self.tablify_body(body, cli_major_version, separator: /\s{2,}/, column_name: 'Option', no_link: true)
                       when "ENVIRONMENT VARIABLES"
-                        self.tablify_body(body, column_name: 'Variable', no_link: true)
+                        self.tablify_body(body, cli_major_version, column_name: 'Variable', no_link: true)
                       else
-                        self.tablify_body(body)
+                        self.tablify_body(body, cli_major_version)
                     end
       end
 
       "#{TITLE_HEADER}\n#{out.join("\n\n")}"
     end
 
-    def tablify_body(body, **options)
+    def tablify_body(body, cli_major_version, **options)
       separator = options.fetch(:separator, /\s+/)
       column_name = options.fetch(:column_name, 'Command')
       no_link = options.fetch(:no_link, false)
@@ -82,7 +82,7 @@ title: Cloud Foundry CLI Reference Guide
                   command, description = line.split(separator, 2)
                   description ||= '&nbsp;'
                   unless no_link
-                    command = "<a href='http://cli.cloudfoundry.org/en-US/v6/#{command}.html' target='_blank'>#{command}</a>"
+                    command = "<a href='http://cli.cloudfoundry.org/en-US/v#{cli_major_version}/#{command}.html' target='_blank'>#{command}</a>"
                   end
                   <<-EOS
     <tr>
