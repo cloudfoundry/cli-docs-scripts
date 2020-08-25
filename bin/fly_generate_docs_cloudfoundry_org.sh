@@ -8,8 +8,11 @@ CLI_RELEASE_DIR=/tmp/cf-cli-release
 DOCS_CF_CLI=/home/aberezovsky/workspace/docs-cf-cli
 OUT_DOCS_CF_CLI=/tmp/docs-cf-cli
 
+DEFAULT_OUTFILE="cf-help.html.md.erb"
+
 function main() {
   rm -rf $OUT_DOCS_CF_CLI && mkdir -p $OUT_DOCS_CF_CLI
+  OUTFILE=${1:-$DEFAULT_OUTFILE} \
   fly -t ci execute \
     --include-ignored \
     -c $CONCOURSE_SCRIPTS_DIR/pubtools/cf-CLI/generate-cli-section-page.yml \
