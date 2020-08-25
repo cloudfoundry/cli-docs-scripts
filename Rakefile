@@ -20,7 +20,7 @@ end
 
 desc 'Format `cf help` output to STDOUT'
 task :format do |t, args|
-  cli_major_version = Integer(`cf version`.strip.match(/cf version (\d)\.\d\.\d\+\w/).captures.first)
+  cli_major_version = Integer(`cf version`.strip.match(/cf version (\d+)\.\d+\.\d+\+\w/).captures.first)
   cli_help_text = `CF_COLOR=false cf help -a`
 
   require_relative 'lib/cli2docs'
