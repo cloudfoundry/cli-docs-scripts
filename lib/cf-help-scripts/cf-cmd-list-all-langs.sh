@@ -33,6 +33,10 @@ generate_docs_for_cf() {
   done
 }
 
+clean_up_cli(){
+  rm -rf ~/.cf/config.json
+}
+
 main() {
   curl -sL "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github&version=v6" | tar -zx
   cli_binary="$(pwd)/cf"
@@ -42,6 +46,8 @@ main() {
     echo "Error: could not download v6 CLI"
     exit 1
   fi
+
+  clean_up_cli
 
   curl -sL "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github&version=v7" | tar -zx
   cli_binary="$(pwd)/cf"
