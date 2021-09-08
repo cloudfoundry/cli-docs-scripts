@@ -38,25 +38,21 @@ clean_up_cli(){
 }
 
 main() {
-  curl -sL "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github&version=v6" | tar -zx
-  cli_binary="$(pwd)/cf"
-  if [ -x "$cli_binary" ]; then
-    generate_docs_for_cf "$cli_binary"
-  else
-    echo "Error: could not download v6 CLI"
-    exit 1
-  fi
+  MAJOR_VERSIONS="6 7 8"
 
-  clean_up_cli
+  for version in $MAJOR_VERSIONS; do
+    curl -sL "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github&version=v$version" | tar -zx
+    cli_binary="$(pwd)/cf"
 
-  curl -sL "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github&version=v7" | tar -zx
-  cli_binary="$(pwd)/cf"
-  if [ -x "$cli_binary" ]; then
-    generate_docs_for_cf "$cli_binary"
-  else
-    echo "Error: could not download v7 CLI"
-    exit 1
-  fi
+    if [ -x "$cli_binary" ]; then
+      generate_docs_for_cf "$cli_binary"
+    else
+      echo "Error: could not download v$version CLI"
+      exit 1
+    fi
+
+    clean_up_cli
+  done
 }
 
 main "$@"
