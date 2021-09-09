@@ -41,9 +41,9 @@ main() {
   MAJOR_VERSIONS="6 7 8"
 
   for version in $MAJOR_VERSIONS; do
-    url="$CLAW_URL/stable?release=linux64-binary&source=github&version=v$version"
-    echo "Pulling cf cli binary from: $url"
-    curl -sLk $url | tar -zx
+    claw_url="$CLAW_URL/stable?release=linux64-binary&source=github&version=v$version"
+    echo "Pulling cf cli binary from: $claw_url"
+    curl -sL $claw_url | tar -zx
     cli_binary="$(pwd)/cf"
 
     if [ -x "$cli_binary" ]; then
