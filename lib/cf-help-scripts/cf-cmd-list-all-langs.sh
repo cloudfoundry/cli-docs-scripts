@@ -43,7 +43,7 @@ main() {
   for version in $MAJOR_VERSIONS; do
     url="$CLAW_URL/stable?release=linux64-binary&source=github&version=v$version"
     echo "Pulling cf cli binary from: $url"
-    curl -sL $url | tar -zx
+    curl -sLk $url | tar -zx
     cli_binary="$(pwd)/cf"
 
     if [ -x "$cli_binary" ]; then
