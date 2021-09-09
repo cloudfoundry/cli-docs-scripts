@@ -41,7 +41,7 @@ main() {
   MAJOR_VERSIONS="6 7 8"
 
   for version in $MAJOR_VERSIONS; do
-    curl -sL "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github&version=v$version" | tar -zx
+    curl -sL "${CLAW_URL}/stable?release=linux64-binary&source=github&version=v$version" | tar -zx
     cli_binary="$(pwd)/cf"
 
     if [ -x "$cli_binary" ]; then
