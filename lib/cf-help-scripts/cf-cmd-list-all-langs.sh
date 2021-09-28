@@ -38,7 +38,7 @@ clean_up_cli(){
 }
 
 main() {
-  MAJOR_VERSIONS="6 7"
+  MAJOR_VERSIONS="6 7 8"
 
   for version in $MAJOR_VERSIONS; do
     claw_url="$CLAW_URL/stable?release=linux64-binary&source=github&version=v$version"

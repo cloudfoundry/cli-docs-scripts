@@ -23,6 +23,7 @@
     <ul>
       <li><a href="../../LOCALE/v6">V6</a></li>
       <li><a href="../../LOCALE/v7">V7</a></li>
+      <li><a href="../../LOCALE/v8">V8</a></li>
     </ul>
     <span>&#9660;</span>
   </div>
